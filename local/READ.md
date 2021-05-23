@@ -11,3 +11,14 @@ kong port
 - 8444 https สำหรับ admin
 - 8000 http สำหรับ client
 - 8443 https สำหรับ client
+
+https://github.com/bitnami/charts/tree/master/bitnami/jenkins
+https://github.com/bitnami/charts/tree/master/bitnami/kong
+https://docs.gitea.io/zh-cn/install-on-kubernetes/
+
+
+13.72.208.130 admin.ctos.com
+13.72.208.130 konga.ctos.com
+13.72.199.186 git.cmhit.com
+13.72.208.130 jenkins.cmhit.com
+13.72.208.130 harbar.cmhit.com
