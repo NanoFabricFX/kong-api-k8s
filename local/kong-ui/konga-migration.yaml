@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: konga-migration
-  namespace: test
+  namespace: default
 spec:
   template:
     metadata:
@@ -12,19 +12,19 @@ spec:
     spec:
       containers:
       - name: konga-migration
-        image: pantsel/konga:0.14.7
+        image: pantsel/konga:0.14.9
         imagePullPolicy: IfNotPresent
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         command: ["node"]
-        args: ["./bin/konga.js", "prepare","--adapter","postgres","--uri","postgresql://postgres:mysecretpassword@postgres-service.test.svc.cluster.local:5432/konga?sslmode=disable"]
+        args: ["./bin/konga.js", "prepare","--adapter","postgres","--uri","postgresql://postgres:4lGY1Qnowq@kong-gateway-postgresql.default.svc.cluster.local:5432/konga?sslmode=disable"]
         env:
         - name: TOKEN_SECRET
           value: P@ssw0rd
         - name: DB_ADAPTER
           value: postgres
         - name: DB_HOST
-          value: "postgres-service.test.svc.cluster.local"
+          value: "kong-gateway-postgresql.default.svc.cluster.local"
         - name: DB_PORT
           value: "5432"
         # - name: DB_USER
